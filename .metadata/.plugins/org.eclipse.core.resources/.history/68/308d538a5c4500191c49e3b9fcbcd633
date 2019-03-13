@@ -1,0 +1,27 @@
+package dubbo_test.dubbo_test.main;
+
+import java.io.IOException;
+
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.mywork.serverimpl.DemoServer;
+
+
+public class ClientMain {
+	public static void main(String[] args) {
+		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(new String[] {"applicationProvider.xml"});
+		context.start();
+		System.out.println("客户端启动了");
+		System.out.println("客户端启动了");
+
+
+		DemoServer demoServer = (DemoServer) context.getBean("demoService");
+		System.out.println(demoServer.sayHello("jason"));
+		try {
+			System.in.read();   
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+}

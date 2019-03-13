@@ -1,2 +1,7 @@
 /.project
 /pom.xml
+<<<<<<< Upstream, based on origin/master
+=======
+/src/
+/target/
+>>>>>>> de1ec72 ..
